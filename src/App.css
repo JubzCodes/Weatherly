@@ -77,3 +77,12 @@
   gap: 15%;
   padding-left: 2rem;
 }
+
+.links {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  height: 80px;
+  width: 90%;
+  max-width: 1720px;
+  margin:  0 auto;
+}
