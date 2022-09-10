@@ -92,3 +92,13 @@
   padding-top: 2%;
   padding-bottom: 2%;
 }
+
+.sunset-temperatures {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  height: 80px;
+  width: 90%;
+  max-width: 1720px;
+  margin:  0 auto;
+  padding-bottom: 4%;
+}
