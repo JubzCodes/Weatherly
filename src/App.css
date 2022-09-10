@@ -5,6 +5,8 @@
 .search {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  padding-bottom: 5%;
 }
 
 .search-bar {
@@ -26,11 +28,25 @@
   gap: 10px;
 }
 
+.search-time {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.search-and-city {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-bottom: 5%;
+}
+
 .city-weather div {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  gap: 1%
+  gap: 2rem;
 }
 
 
@@ -38,6 +54,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.feels-and-temperature {
+  padding-bottom: 5%;
 }
 
 .feels {

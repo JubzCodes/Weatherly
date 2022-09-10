@@ -16,7 +16,7 @@ function App() {
         <span>Ottawa</span>
       </div>
       <div className="search-and-city">
-        <div>
+        <div className='search-time'>
           <Search />
           <DateAndTime />
           </div>
@@ -24,7 +24,7 @@ function App() {
           <CityAndWeather />
         </div>
       </div>
-      <div className="feel-and-temperature">
+      <div className="feels-and-temperature">
     <FeelsAndTemperature />
       </div>
       <div className="sun-times">
