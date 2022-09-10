@@ -7,7 +7,7 @@ import FeelsAndTemperature from './components/FeelsAndTemperature';
 function App() {
   return (
     <div className="App">
-      <h1 className='title'>WEATHERLY</h1>
+      <h1 className="title">WEATHERLY</h1>
       <div className="links">
         <span>Vancouver</span>
         <span>Hamilton</span>
@@ -16,18 +16,18 @@ function App() {
         <span>Ottawa</span>
       </div>
       <div className="search-and-city">
-        <div className='search-time'>
+        <div className="search-time">
           <Search />
           <DateAndTime />
-          </div>
+        </div>
         <div className="city-and-weather">
           <CityAndWeather />
         </div>
       </div>
       <div className="feels-and-temperature">
-    <FeelsAndTemperature />
+        <FeelsAndTemperature />
       </div>
-      <div className="sun-times">
+      <div className="sunset-and-temperatures">
         <span>rise</span>
         <span>set</span>
       </div>
