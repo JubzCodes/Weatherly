@@ -102,3 +102,23 @@
   margin:  0 auto;
   padding-bottom: 4%;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border-top: solid;
+  padding-top: 5%;
+}
+
+.cards-wrap {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  height: 80px;
+  width: 90%;
+  max-width: 1720px;
+  margin:  0 auto;
+  padding-bottom: 4%;
+}

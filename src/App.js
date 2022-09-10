@@ -4,6 +4,7 @@ import DateAndTime from './components/DateAndTime';
 import CityAndWeather from './components/CityAndWeather';
 import FeelsAndTemperature from './components/FeelsAndTemperature';
 import SunsetAndTemperatures from './components/SunsetAndTemperatures'
+import Forecast from './components/Forecast';
 
 function App() {
   return (
@@ -31,7 +32,9 @@ function App() {
       <div className="sunset-and-temperatures">
         <SunsetAndTemperatures />
       </div>
-      <div className="hourly-forecast"></div>
+      <div className="hourly-forecast">
+        <Forecast />
+      </div>
       <div className="weekly-forecast"></div>
     </div>
   );
