@@ -7,7 +7,7 @@ import FeelsAndTemperature from './components/FeelsAndTemperature';
 function App() {
   return (
     <div className="App">
-      <h1>WEATHERLY</h1>
+      <h1 className='title'>WEATHERLY</h1>
       <div className="links">
         <span>Vancouver</span>
         <span>Hamilton</span>
