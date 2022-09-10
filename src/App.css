@@ -32,3 +32,28 @@
   align-items: center;
   gap: 1%
 }
+
+
+.feels-temperature {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.feels {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.temp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.units {
+  display: flex; 
+  gap: 15%;
+  padding-left: 2rem;
+}

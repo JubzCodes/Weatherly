@@ -2,6 +2,7 @@ import './App.css';
 import Search from './components/Search';
 import DateAndTime from './components/DateAndTime';
 import CityAndWeather from './components/CityAndWeather';
+import FeelsAndTemperature from './components/FeelsAndTemperature';
 
 function App() {
   return (
@@ -24,18 +25,7 @@ function App() {
         </div>
       </div>
       <div className="feel-and-temperature">
-        <div className="feels">
-          <span>feels like</span>
-          <span>humidity</span>
-          <span>wind</span>
-        </div>
-        <div>
-          <h1>TEMP °C</h1>
-          <div className="symbols">
-            <button>C</button>
-            <button>F</button>
-          </div>
-        </div>
+    <FeelsAndTemperature />
       </div>
       <div className="sun-times">
         <span>rise</span>
