@@ -8,8 +8,8 @@ const Search = () => {
   const [city, setCity] = useState('');
 
   return (
-    <div>
-      <input 
+    <div className='search'>
+      <input
       className='search-bar'
       type="text"
       placeholder='Search a City...'
@@ -17,9 +17,9 @@ const Search = () => {
       onChange={(e)=> setCity(e.target.value)}
       autoFocus
       ></input>
-      <div>
-      <FontAwesomeIcon icon={faMagnifyingGlass}></FontAwesomeIcon>
-      <FontAwesomeIcon icon={faMagnifyingGlassLocation}></FontAwesomeIcon>
+      <div className='search-icons'>
+      <FontAwesomeIcon title='Search' icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
+      <FontAwesomeIcon title='Location' icon={faMagnifyingGlassLocation} size="xl"></FontAwesomeIcon>
       </div>
     </div>
   )

@@ -13,7 +13,7 @@ function App() {
         <span>Ottawa</span>
       </div>
       <div className="search-and-city">
-        <div className="search">
+        <div>
           <Search />
           <span>date & time</span>
         </div>
