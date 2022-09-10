@@ -23,7 +23,7 @@ function App() {
           <CityAndWeather />
         </div>
       </div>
-      <div className="temperature">
+      <div className="feel-and-temperature">
         <div className="feels">
           <span>feels like</span>
           <span>humidity</span>
