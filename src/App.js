@@ -1,4 +1,5 @@
 import './App.css';
+import Search from './components/Search';
 
 function App() {
   return (
@@ -13,11 +14,7 @@ function App() {
       </div>
       <div className="search-and-city">
         <div className="search">
-          <div className="search-div">
-            <input className="search-bar"></input>
-            <button>serach</button>
-            <button>location</button>
-          </div>
+          <Search />
           <span>date & time</span>
         </div>
         <div className="city">
