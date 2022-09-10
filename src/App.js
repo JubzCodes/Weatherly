@@ -35,7 +35,9 @@ function App() {
       <div className="hourly-forecast">
         <Forecast />
       </div>
-      <div className="weekly-forecast"></div>
+      <div className="weekly-forecast">
+        <Forecast />
+      </div>
     </div>
   );
 }
