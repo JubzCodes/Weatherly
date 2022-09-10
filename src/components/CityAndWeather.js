@@ -6,11 +6,11 @@ import {
 
 const CityAndWeather = () => {
   return (
-    <div className='city-and-weather'>
+    <div className='city-weather'>
       <h1>Toronto</h1>
       <div>
-        <FontAwesomeIcon icon={faCloud}/>
-        <h5>Clouds</h5>
+        <FontAwesomeIcon icon={faCloud} size="4x"/>
+        <h2>Clouds</h2>
       </div>
     </div>
   )

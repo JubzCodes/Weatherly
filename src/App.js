@@ -1,6 +1,7 @@
 import './App.css';
 import Search from './components/Search';
 import DateAndTime from './components/DateAndTime';
+import CityAndWeather from './components/CityAndWeather';
 
 function App() {
   return (
@@ -18,12 +19,8 @@ function App() {
           <Search />
           <DateAndTime />
           </div>
-        <div className="city">
-          <h1>City</h1>
-          <div>
-            <span>icon</span>
-            <span>Wetaher</span>
-          </div>
+        <div className="city-and-weather">
+          <CityAndWeather />
         </div>
       </div>
       <div className="temperature">

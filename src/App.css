@@ -25,3 +25,10 @@
   padding-left: 1%;
   gap: 10px;
 }
+
+.city-weather div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1%
+}
