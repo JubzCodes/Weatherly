@@ -44,12 +44,21 @@ const formatWeather = (data) => {
   };
 };
 
+
 //HANDLE WEATHER API CALL
 const getFormattedWeather = async (searchParams) => {
+
   const formattedWeather = await fetchWeather("weather", searchParams).then(
     formatWeather
   );
-  return formattedWeather;
+
+  //CALL FORECAST API
+  const { lon, lat } = formattedWeather = await fetchWeather("onecall", { 
+    lon, lat, 
+    exclude: "current, minutely, alerts",
+    units: searchParams.units})
+
+    return formattedWeather;
 };
 
-export default getFormattedWeather;
+export default getFormattedWeather; 
