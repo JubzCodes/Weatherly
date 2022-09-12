@@ -44,6 +44,33 @@ const formatWeather = (data) => {
   };
 };
 
+const localTime = (
+  seconds,
+  timezone,
+  format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a"
+) => DateTime.fromSeconds(seconds).setZone(timezone).toFormat(format);
+
+// HANDLE DESTRUCTURE OF FORECAST WETAHER API
+const formatForecast = (data) => {
+  let { timezone, daily, hourly } = data;
+  daily = daily.slice(1, 6).map((d) => {
+    return {
+      title: localTime(d.dt, timezone, "ccc"),
+      temp: d.temp.day,
+      icon: d.weather[0].icon,
+    };
+  });
+
+  hourly = hourly.slice(1, 6).map((d) => {
+    return {
+      title: localTime(d.dt, timezone, "hh:mm a"),
+      temp: d.temp,
+      icon: d.weather[0].icon,
+    };
+  });
+
+  return { timezone, daily, hourly };
+}
 
 //HANDLE WEATHER API CALL
 const getFormattedWeather = async (searchParams) => {
@@ -52,13 +79,15 @@ const getFormattedWeather = async (searchParams) => {
     formatWeather
   );
 
+  const { lon, lat } = formattedWeather 
+  
   //CALL FORECAST API
-  const { lon, lat } = formattedWeather = await fetchWeather("onecall", { 
+  const formattedForecast = await fetchWeather("onecall", { 
     lon, lat, 
     exclude: "current, minutely, alerts",
-    units: searchParams.units})
+    units: searchParams.units}).then(formatForecast);
 
-    return formattedWeather;
+    return {...formattedWeather, ...formattedForecast};
 };
 
 export default getFormattedWeather; 
