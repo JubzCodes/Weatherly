@@ -1,3 +1,5 @@
+import { DateTime } from "luxon";
+
 // HANDLE API
 const fetchWeather = (endpoint, searchParams) => {
   const url = new URL("https://api.openweathermap.org/data/2.5/" + endpoint);
@@ -9,7 +11,6 @@ const fetchWeather = (endpoint, searchParams) => {
 
   return fetch(url).then((res) => res.json().then((data) => data));
 };
-
 
 // HANDLE DESTRUCTURE OF WEATHERAPI DATA
 const formatWeather = (data) => {
@@ -70,31 +71,32 @@ const formatForecast = (data) => {
   });
 
   return { timezone, daily, hourly };
-}
+};
 
 //HANDLE WEATHER API CALL
 const getFormattedWeather = async (searchParams) => {
-
   const formattedWeather = await fetchWeather("weather", searchParams).then(
     formatWeather
   );
 
-  const { lon, lat } = formattedWeather 
-  
-  //CALL FORECAST API
-  const formattedForecast = await fetchWeather("onecall", { 
-    lon, lat, 
-    exclude: "current, minutely, alerts",
-    units: searchParams.units}).then(formatForecast);
+  const { lon, lat } = formattedWeather;
 
-    return {...formattedWeather, ...formattedForecast};
+  //CALL FORECAST API
+  const formattedForecast = await fetchWeather("onecall", {
+    lon,
+    lat,
+    exclude: "current, minutely, alerts",
+    units: searchParams.units,
+  }).then(formatForecast);
+
+  return { ...formattedWeather, ...formattedForecast };
 };
 
 //HANDLE ICON
 const getIcon = (data) => {
-  `http://openweathermap.org/img/wn/${data}@2x.png`;
-}
+  return `http://openweathermap.org/img/wn/${data}@2x.png`;
+};
 
-export default getFormattedWeather; 
+export default getFormattedWeather;
 
-export { localTime, getIcon }
+export { localTime, getIcon };
