@@ -9,22 +9,24 @@ import { useEffect } from 'react'
 
 function App() {
 
+  const getWeather  =  (endpoint, searchParams) => {
+    const url = new URL(
+      "https://api.openweathermap.org/data/2.5/"+ endpoint
+    );
+    url.search = new URLSearchParams({
+      ...searchParams,
+      appid: "0be1143e55cbb02debda50a86cce2e12",
+    });
+    return fetch(url).then((res) => res.json().then((data) => data));
+  };
 
-  useEffect(() => {
 
-    const getWeather = (endpoint, searchParams) => {
-      const url = new URL(
-        "https://api.openweathermap.org/data/2.5/"+ endpoint
-      );
-      url.search = new URLSearchParams({
-        ...searchParams,
-        appid: "0be1143e55cbb02debda50a86cce2e12",
-      });
-      return fetch(url).then((res) => console.log(res.json()));
-    };
-
-    getWeather("weather", {q: "toronto"});
-  })
+    const fetchWeather = async () => {
+      const data = await getWeather("weather", { q: "toronto" });
+      console.log(data)
+    }
+    
+    fetchWeather();
 
 
   return (
