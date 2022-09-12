@@ -5,29 +5,19 @@ import CityAndWeather from './components/CityAndWeather';
 import FeelsAndTemperature from './components/FeelsAndTemperature';
 import SunsetAndTemperatures from './components/SunsetAndTemperatures'
 import Forecast from './components/Forecast';
-import { useEffect } from 'react'
+import { useEffect } from 'react';
+import getFormattedWeather from './helpers';
 
 function App() {
 
-  const getWeather  =  (endpoint, searchParams) => {
-    const url = new URL(
-      "https://api.openweathermap.org/data/2.5/"+ endpoint
-    );
-    url.search = new URLSearchParams({
-      ...searchParams,
-      appid: "0be1143e55cbb02debda50a86cce2e12",
-    });
-    return fetch(url).then((res) => res.json().then((data) => data));
-  };
 
-
-    const fetchWeather = async () => {
-      const data = await getWeather("weather", { q: "toronto" });
+  //HANDLE API CALL
+    const getWeather = async () => {
+      const data = await getFormattedWeather({ q: "toronto" });
       console.log(data)
     }
     
-    fetchWeather();
-
+    getWeather();
 
   return (
     <div className="App">
