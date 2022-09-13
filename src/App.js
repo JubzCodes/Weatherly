@@ -5,10 +5,15 @@ import CityAndWeather from './components/CityAndWeather';
 import FeelsAndTemperature from './components/FeelsAndTemperature';
 import SunsetAndTemperatures from './components/SunsetAndTemperatures'
 import Forecast from './components/Forecast';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import getFormattedWeather from './helpers';
 
 function App() {
+
+  //STATES FOR WEATHER
+  const [query, setQuery] = useState({q: "toronto"});
+  const [units, setUnits] = useState("metric");
+  const [weather, setWeather] = useState(null);
 
 
   //HANDLE API CALL
