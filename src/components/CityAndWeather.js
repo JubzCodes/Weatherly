@@ -1,16 +1,16 @@
 import React from 'react'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCloud
-} from "@fortawesome/free-solid-svg-icons";
 
-const CityAndWeather = () => {
+
+const CityAndWeather = ({weather : { name, country, details, icon}}) => {
+
+  let url = `http://openweathermap.org/img/wn/${icon}@2x.png`
+
   return (
     <div className='city-weather'>
-      <h1>Toronto</h1>
+      <h1>{`${name}, ${country}`}</h1>
       <div>
-        <FontAwesomeIcon icon={faCloud} size="4x"/>
-        <h2>Clouds</h2>
+        <img alt='' src={url}></img>
+        <h2>{details}</h2>
       </div>
     </div>
   )

@@ -92,11 +92,7 @@ const getFormattedWeather = async (searchParams) => {
   return { ...formattedWeather, ...formattedForecast };
 };
 
-//HANDLE ICON
-const getIcon = (data) => {
-  return `http://openweathermap.org/img/wn/${data}@2x.png`;
-};
 
 export default getFormattedWeather;
 
-export { localTime, getIcon };
+export { localTime };
