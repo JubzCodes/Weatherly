@@ -17,12 +17,20 @@ function App() {
 
 
   //HANDLE API CALL
+
+  useEffect(() => {
+
     const getWeather = async () => {
-      const data = await getFormattedWeather({ q: "toronto" });
-      console.log(data)
+      await getFormattedWeather({...query, units}).then((data) => {
+        setWeather(data);
+        console.log(weather);
+      })
     }
     
     getWeather();
+
+  }, [query, units])
+
 
   return (
     <div className="App">
