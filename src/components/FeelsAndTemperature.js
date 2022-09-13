@@ -4,26 +4,28 @@ import {
   faTemperature3, faDroplet, faWind
 } from "@fortawesome/free-solid-svg-icons";
 
-const FeelsAndTemperature = () => {
+const FeelsAndTemperature = ({weather: {temp, feels_like, humidity, speed}}) => {
   return (
     <div className="feels-temperature">
       <div className="feels">
         <span>
           {" "}
-          <FontAwesomeIcon icon={faTemperature3}></FontAwesomeIcon> Feels like:
-          10
+          <FontAwesomeIcon icon={faTemperature3}></FontAwesomeIcon> Feels like:{" "}
+          {`${feels_like.toFixed()}`}°
         </span>
         <span>
           {" "}
-          <FontAwesomeIcon icon={faDroplet}></FontAwesomeIcon> Humidity: 20
+          <FontAwesomeIcon icon={faDroplet}></FontAwesomeIcon> Humidity:{" "}
+          {`${humidity.toFixed()}`}%
         </span>
         <span>
           {" "}
-          <FontAwesomeIcon icon={faWind}></FontAwesomeIcon> Wind: 5 mph
+          <FontAwesomeIcon icon={faWind}></FontAwesomeIcon> Wind:{" "}
+          {`${speed.toFixed()}`} km/h
         </span>
       </div>
       <div className="temp">
-        <h1>86°C</h1>
+        <h1>{`${temp.toFixed()}`}°</h1>
         <div className="units">
           <span>°C</span>|<span>°F</span>
         </div>

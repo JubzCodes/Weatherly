@@ -58,7 +58,7 @@ function App() {
       {weather && (
         <>
       <div className="feels-and-temperature">
-        <FeelsAndTemperature />
+        <FeelsAndTemperature weather={weather} />
       </div>
       <div className="sunset-and-temperatures">
         <SunsetAndTemperatures />
