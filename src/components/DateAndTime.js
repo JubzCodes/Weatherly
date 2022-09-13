@@ -1,9 +1,10 @@
 import React from 'react'
+import { localTime } from '../helpers'
 
-const DateAndTime = () => {
+const DateAndTime = ({weather : { dt, timezone }}) => {
   return (
     <div>
-      <span>Friday, Sep 9, 2022</span>{" "}|{" "}<span>Local Time: 9:10pm</span>
+      <span>{localTime(dt, timezone)}</span>
     </div>
   )
 }

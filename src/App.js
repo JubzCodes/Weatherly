@@ -46,7 +46,7 @@ function App() {
         <div className="search-time">
           <Search />
         {weather && (
-          <DateAndTime />
+          <DateAndTime weather={weather} />
         )}
         </div>
         {weather && (
