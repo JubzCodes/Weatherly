@@ -45,12 +45,18 @@ function App() {
       <div className="search-and-city">
         <div className="search-time">
           <Search />
+        {weather && (
           <DateAndTime />
+        )}
         </div>
+        {weather && (
         <div className="city-and-weather">
           <CityAndWeather />
         </div>
+        )}
       </div>
+      {weather && (
+        <>
       <div className="feels-and-temperature">
         <FeelsAndTemperature />
       </div>
@@ -63,6 +69,8 @@ function App() {
       <div className="weekly-forecast">
         <Forecast />
       </div>
+        </>
+      )}
     </div> 
   );
 }
