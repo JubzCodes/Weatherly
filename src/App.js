@@ -61,7 +61,7 @@ function App() {
         <FeelsAndTemperature weather={weather} />
       </div>
       <div className="sunset-and-temperatures">
-        <SunsetAndTemperatures />
+        <SunsetAndTemperatures weather={weather}/>
       </div>
       <div className="hourly-forecast">
         <Forecast />
