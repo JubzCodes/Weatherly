@@ -45,33 +45,31 @@ function App() {
       <div className="search-and-city">
         <div className="search-time">
           <Search />
-        {weather && (
-          <DateAndTime weather={weather} />
-        )}
+          {weather && <DateAndTime weather={weather} />}
         </div>
         {weather && (
-        <div className="city-and-weather">
-          <CityAndWeather weather={weather} />
-        </div>
+          <div className="city-and-weather">
+            <CityAndWeather weather={weather} />
+          </div>
         )}
       </div>
       {weather && (
         <>
-      <div className="feels-and-temperature">
-        <FeelsAndTemperature weather={weather} />
-      </div>
-      <div className="sunset-and-temperatures">
-        <SunsetAndTemperatures weather={weather}/>
-      </div>
-      <div className="hourly-forecast">
+          <div className="feels-and-temperature">
+            <FeelsAndTemperature weather={weather} />
+          </div>
+          <div className="sunset-and-temperatures">
+            <SunsetAndTemperatures weather={weather} />
+          </div>
+          <div className="hourly-forecast">
+            <Forecast weather={weather.hourly} />
+          </div>
+          {/* <div className="daily-forecast">
         <Forecast />
-      </div>
-      <div className="weekly-forecast">
-        <Forecast />
-      </div>
+      </div> */}
         </>
       )}
-    </div> 
+    </div>
   );
 }
 

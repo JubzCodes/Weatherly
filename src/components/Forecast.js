@@ -1,37 +1,30 @@
 import React from 'react'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCloud } from "@fortawesome/free-solid-svg-icons";
 
-const Forecast = () => {
+const Forecast = ({weather}) => {
+  
+  console.log(weather)
+
+  //HANDLE ICON FROM API
+  const getIcon = (icon) => {
+    let url = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    return url;
+  }
+
   return (
     <div>
-      <h2>Forcast</h2>
+      <h2>Hourly Forcast</h2>
       <div className="cards-wrap">
-        <div className="card">
-          <span>5:00am</span>
-          <FontAwesomeIcon icon={faCloud}></FontAwesomeIcon>
-          <span>47°</span>
+
+      {weather.map((hour, index) => {
+        return(
+        <div key={index} className="card">
+          <span>{hour.title}</span>
+          <img alt="" src={getIcon(hour.icon)}></img>
+          <span>{`${hour.temp.toFixed()}°`}</span>
         </div>
-        <div className="card">
-          <span>6:00am</span>
-          <FontAwesomeIcon icon={faCloud}></FontAwesomeIcon>
-          <span>47°</span>
-        </div>
-        <div className="card">
-          <span>7:00am</span>
-          <FontAwesomeIcon icon={faCloud}></FontAwesomeIcon>
-          <span>47°</span>
-        </div>
-        <div className="card">
-          <span>8:00am</span>
-          <FontAwesomeIcon icon={faCloud}></FontAwesomeIcon>
-          <span>47°</span>
-        </div>
-        <div className="card">
-          <span>9:00am</span>
-          <FontAwesomeIcon icon={faCloud}></FontAwesomeIcon>
-          <span>47°</span>
-        </div>
+        )
+      })}
+
       </div>
     </div>
   );

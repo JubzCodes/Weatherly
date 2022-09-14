@@ -1,5 +1,6 @@
 import { DateTime } from "luxon";
 
+
 // HANDLE API
 const fetchWeather = (endpoint, searchParams) => {
   const url = new URL("https://api.openweathermap.org/data/2.5/" + endpoint);
