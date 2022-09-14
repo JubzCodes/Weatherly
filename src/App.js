@@ -45,7 +45,7 @@ function App() {
       </div>
       <div className="search-and-city">
         <div className="search-time">
-          <Search />
+          <Search setQuery={setQuery}/>
           {weather && <DateAndTime weather={weather} />}
         </div>
         {weather && (

@@ -1,11 +1,19 @@
 import { useState } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faMagnifyingGlassLocation } from "@fortawesome/free-solid-svg-icons";
+import {  faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
-const Search = () => {
+const Search = ({ setQuery }) => {
 
   //CITY STATE
   const [city, setCity] = useState('');
+
+  const handleSearch = (e) => {
+    if(e.key === "Enter") {
+      if (city !== "") {
+        setQuery({ q: city });
+      }
+    }
+  }
 
   return (
     <div className='search'>
@@ -16,10 +24,10 @@ const Search = () => {
       value={city}
       onChange={(e)=> setCity(e.target.value)}
       autoFocus
+      onKeyPress={handleSearch}
       ></input>
       <div className='search-icons'>
-      <FontAwesomeIcon title='Search' icon={faMagnifyingGlass} size="xl"></FontAwesomeIcon>
-      <FontAwesomeIcon title='Location' icon={faMagnifyingGlassLocation} size="xl"></FontAwesomeIcon>
+      <FontAwesomeIcon title='Location' icon={faLocationDot} size="xl"></FontAwesomeIcon>
       </div>
     </div>
   )
