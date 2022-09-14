@@ -7,6 +7,7 @@ const Search = ({ setQuery }) => {
   //CITY STATE
   const [city, setCity] = useState('');
 
+  //HANDLE SEARCH
   const handleSearch = (e) => {
     if(e.key === "Enter") {
       if (city !== "") {
@@ -14,6 +15,22 @@ const Search = ({ setQuery }) => {
       }
     }
   }
+
+  //HANDLE USER LOCATION
+  const handleLocation = () => {
+    if (navigator.geolocation) {
+
+      navigator.geolocation.getCurrentPosition((position) => {
+        let lon = position.coords.longitude;
+        let lat = position.coords.latitude;
+
+        setQuery({
+          lat,
+          lon,
+        });
+      });
+    }
+  };
 
   return (
     <div className='search'>
@@ -27,7 +44,7 @@ const Search = ({ setQuery }) => {
       onKeyPress={handleSearch}
       ></input>
       <div className='search-icons'>
-      <FontAwesomeIcon title='Location' icon={faLocationDot} size="xl"></FontAwesomeIcon>
+      <FontAwesomeIcon title='Location' icon={faLocationDot} size="xl" onClick={handleLocation}></FontAwesomeIcon>
       </div>
     </div>
   )
