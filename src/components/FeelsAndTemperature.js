@@ -1,10 +1,32 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTemperature3, faDroplet, faWind
 } from "@fortawesome/free-solid-svg-icons";
 
-const FeelsAndTemperature = ({weather: {temp, feels_like, humidity, speed}}) => {
+const FeelsAndTemperature = ({weather: {temp, feels_like, humidity, speed}, units, setUnits}) => {
+
+    //TOGGLE STATE
+    const [selected, setSelected] = useState(false);
+
+    //HANDLE UNIT CHANGE
+    useEffect(() => {
+      
+      if(!selected) {
+        setUnits("metric")
+      }
+
+      if(selected) {
+        setUnits("imperial")
+      }
+
+
+    },[selected, setUnits])
+
+
+  console.log(selected)
+  
+
   return (
     <div className="feels-temperature">
       <div className="feels">
@@ -27,7 +49,23 @@ const FeelsAndTemperature = ({weather: {temp, feels_like, humidity, speed}}) => 
       <div className="temp">
         <h1>{`${temp.toFixed()}`}°</h1>
         <div className="units">
-          <span>°C</span>|<span>°F</span>
+          <div className="toggle-button-cover">
+            <div className="button-cover">
+              <div
+                className="button r"
+                id="button-1"
+              >
+                <input
+                  type="checkbox"
+                  className="checkbox"
+                  name="imperial"
+                  onClick={() => setSelected(selected ? false : true)}
+                />
+                <div className="knobs"></div>
+                <div className="layer"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
