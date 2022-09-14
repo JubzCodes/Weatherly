@@ -12,6 +12,7 @@ const Search = ({ setQuery }) => {
     if(e.key === "Enter") {
       if (city !== "") {
         setQuery({ q: city });
+        setCity("")
       }
     }
   }
