@@ -37,11 +37,11 @@ function App() {
     <div className="App">
       <h1 className="title">WEATHERLY</h1>
       <div className="links">
-        <span>Vancouver</span>
-        <span>Hamilton</span>
-        <span>Toronto</span>
-        <span>Kingston</span>
-        <span>Ottawa</span>
+        <span onClick={() => setQuery({ q: "vancouver" })}>Vancouver</span>
+        <span onClick={() => setQuery({ q: "niagara" })}>Niagara</span>
+        <span onClick={() => setQuery({ q: "vancouver" })}>Toronto</span>
+        <span onClick={() => setQuery({ q: "vancouver" })}>Kingston</span>
+        <span onClick={() => setQuery({ q: "vancouver" })}>Ottawa</span>
       </div>
       <div className="search-and-city">
         <div className="search-time">
