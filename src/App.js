@@ -9,6 +9,7 @@ import DailyForecast from './components/DailyForecast';
 import { useEffect, useState } from 'react';
 import getFormattedWeather from './helpers';
 
+
 function App() {
 
   //STATES FOR WEATHER
@@ -32,9 +33,20 @@ function App() {
 
   }, [query, units])
 
+  
+  const max = units === "metric" ? 20 : 60;
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={
+        weather && weather.temp <= max
+          ? {
+              backgroundImage: "linear-gradient(160deg, #045DE9, #09C6F9)",
+            }
+          : { backgroundImage: "linear-gradient(160deg, red, yellow)" }
+      }
+    >
       <h1 className="title">WEATHERLY</h1>
       <div className="links">
         <span onClick={() => setQuery({ q: "vancouver" })}>Vancouver</span>
@@ -45,7 +57,7 @@ function App() {
       </div>
       <div className="search-and-city">
         <div className="search-time">
-          <Search setQuery={setQuery}/>
+          <Search setQuery={setQuery} />
           {weather && <DateAndTime weather={weather} />}
         </div>
         {weather && (
