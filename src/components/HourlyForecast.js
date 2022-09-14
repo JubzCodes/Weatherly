@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Forecast = ({weather}) => {
+const HourlyForecast = ({weather}) => {
   
   console.log(weather)
 
@@ -30,4 +30,4 @@ const Forecast = ({weather}) => {
   );
 }
 
-export default Forecast
+export default HourlyForecast
