@@ -6,10 +6,11 @@
 
 .App {
   text-align: center;
-  height: 120vh;
+  height: 170vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: white;
 }
 
 
@@ -21,22 +22,33 @@
 }
 
 .search-bar {
-  background: #898989;
+  background-color: rgba(255, 255, 255, 0.2);
   padding: 0.5rem;
-  border-radius: 0.5rem;
   color: white;
+  border: none;
   outline: none;
+  border-radius: 0.5rem;
+  box-shadow:  3px 3px 6px rgba(0, 0, 0, 0.2);
+  transition: all .2s ease-in-out; 
 }
 
 .search-bar::placeholder {
   color: white;
 }
 
+.search-bar:hover {
+  transform: scale(1.1); 
+}
+
 .search-icons {
   display: flex;
   align-items: center;
-  padding-left: 1%;
-  gap: 10px;
+  padding-left: 5%;
+}
+
+.location-icon:hover {
+  cursor: pointer;
+  color: darkgray
 }
 
 .search-time {
@@ -52,6 +64,10 @@
   padding-bottom: 5%;
 }
 
+.city-title {
+  font-size: 3.5rem;
+}
+
 .city-weather div {
   display: flex;
   flex-direction: row;
@@ -65,7 +81,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  transition: all .2s ease-in-out; 
 }
+
 
 .feels-and-temperature {
   padding-bottom: 5%;
@@ -74,7 +92,17 @@
 .feels {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding: 1%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 2px rgba(50, 50, 70, 0.5);
+  transition: all .2s ease-in-out; 
+}
+
+.feels:hover {
+  transform: scale(1.1); 
 }
 
 .temp {
@@ -83,6 +111,21 @@
   align-items: center !important;
   gap: 2rem;
 }
+
+.temp-title {
+  font-size: 5rem;
+  padding: 5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 2px rgba(50, 50, 70, 0.5);
+  transition: all .2s ease-in-out; 
+}
+
+.temp-title:hover {
+  transform: scale(1.1); 
+}
+
 
 .units {
   display: flex;
@@ -96,43 +139,86 @@
   width: 90%;
   max-width: 1720px;
   margin:  0 auto;
-  padding-bottom: 4%;
+  padding-bottom: 10%;
 }
 
 .title {
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding-top: 5%;
+  padding-bottom: 1%;
 }
 
 .sunset-temperatures {
   display: grid;
-  grid-template-columns: repeat(4, auto);
-  height: 80px;
+  grid-template-columns: repeat(7, auto);
+  justify-content: space-evenly;
   width: 90%;
   max-width: 1720px;
-  margin:  0 auto;
-  padding-bottom: 4%;
+  margin:  0 auto;  
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 2px rgba(50, 50, 70, 0.5);
 }
 
-.card {
+.hourly-title {
+  width: 90%;
+  text-align: start;
+}
+
+.hourly-forecast {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  gap: 1rem;
-  border-top: solid;
+  max-width: 1720px;
   padding-top: 5%;
+}
+
+.daily-title {
+  width: 90%;
+  text-align: start;
+}
+
+.daily-forecast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1720px;
+  padding-top: 2%;
+}
+
+.daily-temps {
+  display: flex;
 }
 
 .cards-wrap {
   display: grid;
   grid-template-columns: repeat(5, auto);
-  height: 80px;
-  width: 90%;
-  max-width: 1720px;
-  margin:  0 auto;
+  padding-top: 2%;
   padding-bottom: 5%;
+  width: 90%;
+  gap: 5%;
+  border-top: solid 3px;
 }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 5%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
+  text-shadow: 1px 2px rgba(50, 50, 70, 0.5);
+  transition: all .2s ease-in-out; 
+}
+
+.card:hover {
+  transform: scale(1.1); 
+}
+
 
 .toggle-button-cover {
   display: flex;
@@ -171,6 +257,11 @@
 .button.r,
 .button.r .layer {
   border-radius: 100px;
+    transition: all .2s ease-in-out; 
+}
+
+.button.r:hover {
+   transform: scale(1.1); 
 }
 
 .checkbox {
@@ -195,7 +286,6 @@
   z-index: 1;
 }
 
-/* Button 1 */
 #button-1 .knobs:before {
   content: "C°";
   position: absolute;
@@ -228,4 +318,17 @@
 #button-1 .knobs:before,
 #button-1 .layer {
   transition: 0.3s ease all;
+}
+
+.number {
+  font-weight: bold;
+}
+
+.link {
+  font-weight: bold;
+}
+
+.link:hover {
+  cursor: pointer;
+  color: darkgray
 }

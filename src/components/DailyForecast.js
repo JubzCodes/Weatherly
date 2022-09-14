@@ -11,22 +11,33 @@ const DailyForecast = ({weather}) => {
   };
 
   return (
-    <div>
-      <h2>Daily Forcast</h2>
+    <>
+      <h2 className='daily-title'>Daily Forecast</h2>
       <div className="cards-wrap">
         {weather.map((day, index) => {
           return (
             <div key={index} className="card">
               <span>{day.day}</span>
               <img alt="" src={getIcon(day.icon)}></img>{" "}
-              <span>Morning: {`${day.temp_morn.toFixed()}°`}</span>
-              <span>Day: {`${day.temp_day.toFixed()}°`}</span>
-              <span>Night: {`${day.temp_night.toFixed()}°`}</span>
+              <div className="daily-temps">
+                <span>
+                  Morning:{" "}
+                  <span className="number">{`${day.temp_morn.toFixed()}°`}</span>
+                </span>
+                <span>
+                  Day:{" "}
+                  <span className="number">{`${day.temp_day.toFixed()}°`}</span>
+                </span>
+                <span>
+                  Night:{" "}
+                  <span className="number">{`${day.temp_night.toFixed()}°`}</span>
+                </span>
+              </div>
             </div>
           );
         })}
       </div>
-    </div>
+    </>
   );
 }
 

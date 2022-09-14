@@ -11,8 +11,8 @@ const HourlyForecast = ({weather}) => {
   }
 
   return (
-    <div>
-      <h2>Hourly Forcast</h2>
+    <>
+      <h2 className='hourly-title'>Hourly Forecast</h2>
       <div className="cards-wrap">
 
       {weather.map((hour, index) => {
@@ -20,13 +20,13 @@ const HourlyForecast = ({weather}) => {
         <div key={index} className="card">
           <span>{hour.time}</span>
           <img alt="" src={getIcon(hour.icon)}></img>
-          <span>{`${hour.temp.toFixed()}°`}</span>
+          <span className='number'>{`${hour.temp.toFixed()}°`}</span>
         </div>
         )
       })}
 
       </div>
-    </div>
+    </>
   );
 }
 

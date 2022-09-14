@@ -42,18 +42,48 @@ function App() {
       style={
         weather && weather.temp <= max
           ? {
-              backgroundImage: "linear-gradient(160deg, #045DE9, #09C6F9)",
+              backgroundImage: "linear-gradient(160deg, #000fdf, #09C6F9)",
             }
           : { backgroundImage: "linear-gradient(160deg, red, yellow)" }
       }
     >
       <h1 className="title">WEATHERLY</h1>
       <div className="links">
-        <span onClick={() => setQuery({ q: "vancouver" })}>Vancouver</span>
-        <span onClick={() => setQuery({ q: "niagara" })}>Niagara</span>
-        <span onClick={() => setQuery({ q: "vancouver" })}>Toronto</span>
-        <span onClick={() => setQuery({ q: "vancouver" })}>Kingston</span>
-        <span onClick={() => setQuery({ q: "vancouver" })}>Ottawa</span>
+        <span
+          title="Check Weather"
+          className="link"
+          onClick={() => setQuery({ q: "vancouver" })}
+        >
+          Vancouver
+        </span>
+        <span
+          title="Check Weather"
+          className="link"
+          onClick={() => setQuery({ q: "niagara" })}
+        >
+          Niagara
+        </span>
+        <span
+          title="Check Weather"
+          className="link"
+          onClick={() => setQuery({ q: "toronto" })}
+        >
+          Toronto
+        </span>
+        <span
+          title="Check Weather"
+          className="link"
+          onClick={() => setQuery({ q: "montreal" })}
+        >
+          Montreal
+        </span>
+        <span
+          title="Check Weather"
+          className="link"
+          onClick={() => setQuery({ q: "ottawa" })}
+        >
+          Ottawa
+        </span>
       </div>
       <div className="search-and-city">
         <div className="search-time">

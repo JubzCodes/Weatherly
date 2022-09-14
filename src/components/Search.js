@@ -44,7 +44,7 @@ const Search = ({ setQuery }) => {
       onKeyPress={handleSearch}
       ></input>
       <div className='search-icons'>
-      <FontAwesomeIcon title='Location' icon={faLocationDot} size="xl" onClick={handleLocation}></FontAwesomeIcon>
+      <FontAwesomeIcon className='location-icon' title='Location' icon={faLocationDot} size="xl" onClick={handleLocation}></FontAwesomeIcon>
       </div>
     </div>
   )

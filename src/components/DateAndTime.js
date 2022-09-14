@@ -4,7 +4,7 @@ import { localTime } from '../helpers'
 const DateAndTime = ({weather : { dt, timezone }}) => {
   return (
     <div>
-      <span>{localTime(dt, timezone)}</span>
+      <span className='number'>{localTime(dt, timezone)}</span>
     </div>
   )
 }

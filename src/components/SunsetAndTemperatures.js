@@ -14,22 +14,25 @@ const SunsetAndTemperatures = ({weather: {sunrise, sunset, temp_max, temp_min, t
       <span>
         {" "}
         <FontAwesomeIcon icon={faSun}></FontAwesomeIcon> Rise:{" "}
-        <span>{localTime(sunrise, timezone, "hh:mm a")}</span>
+        <span className="number">
+          {localTime(sunrise, timezone, "hh:mm a")}
+        </span>
       </span>
+      <span>|</span>
       <span>
-        {" "}
         <FontAwesomeIcon icon={faMoon}></FontAwesomeIcon> Set:{" "}
-        <span>{localTime(sunset, timezone, "hh:mm a")}</span>
+        <span className="number">{localTime(sunset, timezone, "hh:mm a")}</span>
       </span>
+      <span>|</span>
       <span>
         {" "}
         <FontAwesomeIcon icon={faTemperatureHigh}></FontAwesomeIcon> High:{" "}
-        <span>{`${temp_max.toFixed()}°`}</span>
+        <span className="number">{`${temp_max.toFixed()}°`}</span>
       </span>
+      <span>|</span>
       <span>
-        {" "}
         <FontAwesomeIcon icon={faTemperatureLow}></FontAwesomeIcon> Low:{" "}
-        <span>{`${temp_min.toFixed()}°`}</span>
+        <span className="number">{`${temp_min.toFixed()}°`}</span>
       </span>
     </div>
   );

@@ -7,7 +7,7 @@ const CityAndWeather = ({weather : { name, country, details, icon}}) => {
 
   return (
     <div className='city-weather'>
-      <h1>{`${name}, ${country}`}</h1>
+      <h1 className='city-title'>{`${name}, ${country}`}</h1>
       <div>
         <img alt='' src={url}></img>
         <h2>{details}</h2>
