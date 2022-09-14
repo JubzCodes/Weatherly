@@ -18,7 +18,7 @@ const HourlyForecast = ({weather}) => {
       {weather.map((hour, index) => {
         return(
         <div key={index} className="card">
-          <span>{hour.title}</span>
+          <span>{hour.time}</span>
           <img alt="" src={getIcon(hour.icon)}></img>
           <span>{`${hour.temp.toFixed()}°`}</span>
         </div>

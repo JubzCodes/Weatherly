@@ -5,6 +5,7 @@ import CityAndWeather from './components/CityAndWeather';
 import FeelsAndTemperature from './components/FeelsAndTemperature';
 import SunsetAndTemperatures from './components/SunsetAndTemperatures'
 import HourlyForecast from './components/HourlyForecast';
+import DailyForecast from './components/DailyForecast';
 import { useEffect, useState } from 'react';
 import getFormattedWeather from './helpers';
 
@@ -64,9 +65,9 @@ function App() {
           <div className="hourly-forecast">
             <HourlyForecast weather={weather.hourly} />
           </div>
-          {/* <div className="daily-forecast">
-        <Forecast />
-      </div> */}
+          <div className="daily-forecast">
+            <DailyForecast weather={weather.daily} />
+          </div>
         </>
       )}
     </div>
